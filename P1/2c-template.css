@@ -58,6 +58,10 @@ font-family: per;
   text-align: center;
   font-family: per;
   }
+#enlace {
+  text-align: center;
+  
+}
 
 #title  {
 font-family:Persona5;
@@ -121,6 +125,15 @@ clear: both;
   
 }
 
+.titulo4{
+  font-family: per;
+  text-align: center;
+
+  padding-bottom: 10px;
+  
+  
+}
+
 .menciones{
   font-family: per;
   text-align: center;
@@ -173,6 +186,10 @@ clear: both;
 .text2{
   float:left;
   line-height: 10px;
+}
+
+.text4 {
+  line-height: 40px;
 }
 
 #gif {
