@@ -1,0 +1,151 @@
+/* https://www.w3schools.com/howto/howto_css_two_columns.asp */
+/* https://developer.mozilla.org/es/docs/Web/CSS/box-sizing */
+/* Así definimos el comportamiento de caja para todos los elementos */
+* {
+    box-sizing: border-box;
+     
+  }
+  
+  @font-face {
+    font-family: 'Persona5'; /* Nombre que le das a la fuente */
+    src: url('Persona5MenuFontPrototype-Regular.ttf') format('truetype'); /* Ruta al archivo de fuente */
+
+}
+
+  @font-face {
+    font-family: 'per';
+    src: url('Markin-LT-Ultra-Bold.ttf') format('truetype'); /* Ruta al archivo de fuente */
+  }
+/* Crear columnas de ancho diferente que se colocan una a continuación de la otra */
+.columna {
+float: left;
+padding: 10px;
+min-height: 500px;
+}
+
+body{
+
+  background-image: url("5.jpg");;
+  background-size: auto;
+  margin: 25 px;
+  color: #ffffff;
+}
+
+.izquierda {
+width: 30%;
+background-color: rgb(0, 0, 0,0.5);
+display: flex; /* Agregamos display flex */
+flex-direction: column; /* Establecemos la dirección de flex a columna */
+align-items: center; /* Centramos los elementos horizontalmente */
+border: 10px double rgb(139, 121, 15,0.5);
+font-family: per;
+
+
+}
+
+.derecha {
+width: 70%;
+background-color: rgb(0, 0, 0,0.5);
+border: 10px double rgb(139, 121, 15,0.5);
+text-align: center;
+font-family: per;
+}
+
+#title  {
+font-family:Persona5;
+font-size: 30px;
+
+}
+/* Clear floats despues de las columnas para eliminar la superposición */
+.filla:after {
+content: "";
+display: table;
+clear: both;
+}
+
+#c1 {
+    color: #ffffff;
+}
+
+#c2 {
+  color: #ffffff;
+
+}
+.contacto{
+  font-family:Persona5;
+  text-align: center;
+  border-bottom:10px rgb(139, 121, 15,0.5) double;
+
+}
+
+.text1 {
+  text-align: left;
+}
+
+.sobre{
+  font-family:Persona5;
+  text-align: center;
+  border-bottom:10px rgb(139, 121, 15,0.5) double;
+}
+
+.estudios{
+  font-family: per;
+  text-align: center;
+  border-bottom:10px rgb(139, 121, 15,0.5) double;
+  margin-bottom: auto;
+}
+
+.text2{
+  float:left;
+}
+
+#gif {
+  display: inline-block;
+  width: 5%;
+  background-image: url("ggg.gif");;
+  background-size: cover;
+  margin: 0 10px;
+  vertical-align: middle;
+
+}
+
+
+#imgcss {
+  width: 100%;
+  padding: 10px;
+  border: 10px double;color: rgb(139, 121, 15);
+  
+}
+
+/* estilos para imágenes https://www.w3schools.com/css/css3_images.asp */ 
+/* posicionamiento de imágenes https://www.w3schools.com/css/css_positioning.asp */
+
+img {
+    
+    height: auto;
+    width: 100%;
+    margin: 10px;
+    
+}
+
+.iresponsive {
+    
+    width: 60%;
+    
+  }
+
+
+/* Responsive layout - cuando el ancho de pantalla es menor a 600px, muestra las columnas apiladas. */
+/* Así conseguimos que el contenido se vea bien en dispositvos móviles */
+
+@media screen and (max-width: 600px) {
+    .columna {
+      width: 100%;
+    }
+
+    .iresponsive {
+        width: 100%;
+    }
+}
+
+/* Más sobre diseño web responsive https://www.w3schools.com/css/css_rwd_intro.asp */
