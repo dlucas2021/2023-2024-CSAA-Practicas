@@ -37,7 +37,7 @@ background-color: rgb(0, 0, 0,0.5);
 display: flex; /* Agregamos display flex */
 flex-direction: column; /* Establecemos la dirección de flex a columna */
 align-items: center; /* Centramos los elementos horizontalmente */
-border: 10px double rgb(139, 121, 15,0.5);
+border: 10px double rgb(139, 121, 15);
 font-family: per;
 
 
@@ -46,10 +46,18 @@ font-family: per;
 .derecha {
 width: 70%;
 background-color: rgb(0, 0, 0,0.5);
-border: 10px double rgb(139, 121, 15,0.5);
+border: 10px double rgb(139, 121, 15);
 text-align: center;
 font-family: per;
 }
+
+#c {
+  width: 100%;
+  background-color: rgb(0, 0, 0,0.5);
+  border: 10px double rgb(139, 121, 15);
+  text-align: center;
+  font-family: per;
+  }
 
 #title  {
 font-family:Persona5;
@@ -74,7 +82,7 @@ clear: both;
 .contacto{
   font-family:Persona5;
   text-align: center;
-  border-bottom:10px rgb(139, 121, 15,0.5) double;
+  border-bottom:10px rgb(139, 121, 15) double;
 
 }
 
@@ -87,42 +95,84 @@ clear: both;
 .sobre{
   font-family:Persona5;
   text-align: center;
-  border-bottom:10px rgb(139, 121, 15,0.5) double;
+  border-bottom:10px rgb(139, 121, 15) double;
 }
 
+.about{
+  font-family:Persona5;
+  text-align: center;
+  border-bottom:10px rgb(139, 121, 15) double;
+}
 .estudios{
   
   font-family: per;
   text-align: center;
-  border-bottom:10px rgb(139, 121, 15,0.5) double;
+  border-bottom:10px rgb(139, 121, 15) double;
   padding-bottom: 10px;
 
 }
 
-.logros{
+.titulo2{
   font-family: per;
   text-align: center;
-  border-bottom:10px rgb(139, 121, 15,0.5) double;
+  border-bottom:10px rgb(139, 121, 15) double;
   padding-bottom: 10px;
+  
   
 }
 
-.idiomas{
+.menciones{
   font-family: per;
   text-align: center;
-  border-bottom:10px rgb(139, 121, 15,0.5) double;
+  border-bottom:10px rgb(139, 121, 15) double;
   padding-bottom: 10px;
   
 }
+/* Estilo para contenedor de Ann */
+#ann-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 20px; /* Ajusta el margen inferior según sea necesario */
+}
+
+#ann {
+  width: 150px;
+  height: 270px;
+}
+
+#ann-text {
+  font-family: per;
+  color: #ffffff;
+  margin-top: 5px; /* Ajusta el margen superior según sea necesario */
+}
+
+/* Estilo para contenedor de Ryuji */
+#ryuji-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 20px; /* Ajusta el margen inferior según sea necesario */
+}
+
+#ryuji {
+    width: 150px;
+    height: 270px;
+  }
+
+#ryuji-text {
+  font-family: per;
+  color: #ffffff;
+  margin-top: 5px; /* Ajusta el margen superior según sea necesario */
+}
+
+
 
 .text2{
   float:left;
   line-height: 10px;
-}
-
-.text3{
-  float:left;
-  
 }
 
 #gif {
