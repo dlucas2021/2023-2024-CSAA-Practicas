@@ -4,7 +4,13 @@
 * {
     box-sizing: border-box;
   }
-  
+
+  body{
+    background-color: rgb(199, 85, 32);
+    font-family: 'Times New Roman', Times, serif
+    
+  }
+
 /* Crear columnas de ancho diferente que se colocan una a continuación de la otra */
 .columna {
 float: left;
@@ -14,10 +20,12 @@ min-height: 500px;
 
 .izquierda {
 width: 25%;
+
 }
 
 .derecha {
 width: 75%;
+background-color: rgb(233, 121, 16);
 }
 
 /* Clear floats despues de las columnas para eliminar la superposición */
@@ -28,11 +36,18 @@ clear: both;
 }
 
 #c1 {
-    background-color:#aaa;
+  background-color: rgb(199, 85, 32);
+  border: 10px double black;
+ 
 }
 
+/* #text1{
+  border-bottom: 10px double black;
+} */
+
 #c2 {
-    background-color:#bbb;
+  background-color: rgb(199, 85, 32);
+  border: 10px double black;
 }
 
 /* estilos para imágenes https://www.w3schools.com/css/css3_images.asp */
