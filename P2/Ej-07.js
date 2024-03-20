@@ -40,10 +40,14 @@ for (let i = 0; i < 4; i++) {
 }
 
 console.log("Ejecutando JS...");
-console.log(secretkey[0])
-console.log(secretkey[1])
-console.log(secretkey[2])
-console.log(secretkey[3])
+
+let allGuessed = false; // Variable de bandera para verificar si se han adivinado todos los números
+
+function checkAllGuessed() {
+    if (gui.q.textContent != "*" && gui.w.textContent != "*" && gui.e.textContent != "*" && gui.r.textContent != "*") {
+        allGuessed = true;
+    }
+}
 
 //-- Definir un objeto cronómetro
 const crono = new Crono(gui.display);
@@ -63,21 +67,26 @@ gui.start0.onclick = () => {
     if (secretkey[0] === "0") {
         gui.q.textContent = secretkey[0];
         gui.q.style.color = "green"
+        checkAllGuessed();
     } else if (secretkey[1] === "0") {
         gui.w.textContent = secretkey[1];
         gui.w.style.color = "green"
+        checkAllGuessed();
     } else if (secretkey[2] === "0") {
         gui.e.textContent = secretkey[2];
         gui.e.style.color = "green"
+        checkAllGuessed();
     } else if (secretkey[3] === "0") {
         gui.r.textContent = secretkey[3];
         gui.r.style.color = "green"
-        if (gui.q.textContent != "*" &&  gui.w.textContent!= "*" && gui.e.textContent != "*" && gui.r.textContent != "*"){
-            console.log("Enhorabuena")
-            crono.stop()
+        checkAllGuessed();
+    }
+    if (allGuessed) {
+        console.log("Enhorabuena");
+        crono.stop();
     }
     }
-}
+
 
 gui.start1.onclick = () => {
     crono.start();
@@ -85,21 +94,26 @@ gui.start1.onclick = () => {
     if (secretkey[0] === "1") {
         gui.q.textContent = secretkey[0];
         gui.q.style.color = "green"
+        checkAllGuessed();
     } else if (secretkey[1] === "1") {
         gui.w.textContent = secretkey[1];
         gui.w.style.color = "green"
+        checkAllGuessed();
     } else if (secretkey[2] === "1") {
         gui.e.textContent = secretkey[2];
         gui.e.style.color = "green"
+        checkAllGuessed();
     } else if (secretkey[3] === "1") {
         gui.r.textContent = secretkey[3];
         gui.r.style.color = "green"
-    if (gui.q.textContent != "*" &&  gui.w.textContent!= "*" && gui.e.textContent != "*" && gui.r.textContent != "*"){
-        console.log("Enhorabuena")
-        crono.stop()
+        checkAllGuessed();
     }
+        if (allGuessed) {
+            console.log("Enhorabuena");
+            crono.stop();
+        }
     }
-}
+
 
 gui.start2.onclick = () => {
     crono.start();
@@ -107,21 +121,26 @@ gui.start2.onclick = () => {
     if (secretkey[0] === "2") {
         gui.q.textContent = secretkey[0];
         gui.q.style.color = "green"
+        checkAllGuessed();
     } else if (secretkey[1] === "2") {
         gui.w.textContent = secretkey[1];
         gui.w.style.color = "green"
+        checkAllGuessed();
     } else if (secretkey[2] === "2") {
         gui.e.textContent = secretkey[2];
         gui.e.style.color = "green"
+        checkAllGuessed();
     } else if (secretkey[3] === "2") {
         gui.r.textContent = secretkey[3];
         gui.r.style.color = "green"
-    if (gui.q.textContent != "*" &&  gui.w.textContent!= "*" && gui.e.textContent != "*" && gui.r.textContent != "*"){
-        console.log("Enhorabuena")
-        crono.stop()
+        checkAllGuessed();
     }
+        if (allGuessed) {
+            console.log("Enhorabuena");
+            crono.stop();
+        }
     }
-}
+
 
 gui.start3.onclick = () => {
     crono.start();
@@ -129,21 +148,26 @@ gui.start3.onclick = () => {
     if (secretkey[0] === "3") {
         gui.q.textContent = secretkey[0];
         gui.q.style.color = "green"
+        checkAllGuessed();
     } else if (secretkey[1] === "3") {
         gui.w.textContent = secretkey[1];
         gui.w.style.color = "green"
+        checkAllGuessed();
     } else if (secretkey[2] === "3") {
         gui.e.textContent = secretkey[2];
         gui.e.style.color = "green"
+        checkAllGuessed();
     } else if (secretkey[3] === "3") {
         gui.r.textContent = secretkey[3];
         gui.r.style.color = "green"
-    if (gui.q.textContent != "*" &&  gui.w.textContent!= "*" && gui.e.textContent != "*" && gui.r.textContent != "*"){
-        console.log("Enhorabuena")
-        crono.stop()
+        checkAllGuessed();
     }
+        if (allGuessed) {
+            console.log("Enhorabuena");
+            crono.stop();
+        }
     }
-}
+
 
 gui.start4.onclick = () => {
     crono.start();
@@ -151,22 +175,27 @@ gui.start4.onclick = () => {
     if (secretkey[0] === "4") {
         gui.q.textContent = secretkey[0];
         gui.q.style.color = "green"
+        checkAllGuessed();
     } else if (secretkey[1] === "4") {
         gui.w.textContent = secretkey[1];
         gui.w.style.color = "green"
+        checkAllGuessed();
     } else if (secretkey[2] === "4") {
         gui.e.textContent = secretkey[2];
         gui.e.style.color = "green"
+        checkAllGuessed();
     } else if (secretkey[3] === "4") {
         gui.r.textContent = secretkey[3];
         gui.r.style.color = "green"
-    if (gui.q.textContent != "*" &&  gui.w.textContent!= "*" && gui.e.textContent != "*" && gui.r.textContent != "*"){
-        console.log("Enhorabuena")
-        crono.stop()
+        checkAllGuessed();
     }
+        if (allGuessed) {
+            console.log("Enhorabuena");
+            crono.stop();
+        }
     }  
  
-}
+
 
 gui.start5.onclick = () => {
     crono.start();
@@ -174,21 +203,26 @@ gui.start5.onclick = () => {
     if (secretkey[0] === "5") {
         gui.q.textContent = secretkey[0];
         gui.q.style.color = "green"
+        checkAllGuessed();
     } else if (secretkey[1] === "5") {
         gui.w.textContent = secretkey[1];
         gui.w.style.color = "green"
+        checkAllGuessed();
     } else if (secretkey[2] === "5") {
         gui.e.textContent = secretkey[2];
         gui.e.style.color = "green"
+        checkAllGuessed();
     } else if (secretkey[3] === "5") {
         gui.r.textContent = secretkey[3];
         gui.r.style.color = "green"
-    if (gui.q.textContent != "*" &&  gui.w.textContent!= "*" && gui.e.textContent != "*" && gui.r.textContent != "*"){
-        console.log("Enhorabuena")
-        crono.stop()
+        checkAllGuessed();
     }
+        if (allGuessed) {
+            console.log("Enhorabuena");
+            crono.stop();
+        }
     }
-    }
+    
 
 gui.start6.onclick = () => {
     crono.start();
@@ -205,11 +239,12 @@ gui.start6.onclick = () => {
     } else if (secretkey[3] === "6") {
         gui.r.textContent = secretkey[3];
         gui.r.style.color = "green"
-    if (gui.q.textContent != "*" &&  gui.w.textContent!= "*" && gui.e.textContent != "*" && gui.r.textContent != "*"){
-        console.log("Enhorabuena")
-        crono.stop()
     }
-    }
+    if (allGuessed) {
+            console.log("Enhorabuena");
+            crono.stop();
+        }
+    
 }
 
 gui.start7.onclick = () => {
@@ -218,21 +253,26 @@ gui.start7.onclick = () => {
     if (secretkey[0] === "7") {
         gui.q.textContent = secretkey[0];
         gui.q.style.color = "green"
+        checkAllGuessed();
     } else if (secretkey[1] === "7") {
         gui.w.textContent = secretkey[1];
         gui.w.style.color = "green"
+        checkAllGuessed();
     } else if (secretkey[2] === "7") {
         gui.e.textContent = secretkey[2];
         gui.e.style.color = "green"
+        checkAllGuessed();
     } else if (secretkey[3] === "7") {
         gui.r.textContent = secretkey[3];
         gui.r.style.color = "green"
-    if (gui.q.textContent != "*" &&  gui.w.textContent!= "*" && gui.e.textContent != "*" && gui.r.textContent != "*"){
-        console.log("Enhorabuena")
-        crono.stop()
+        checkAllGuessed();
+    }
+    if (allGuessed) {
+        console.log("Enhorabuena");
+        crono.stop();
     }
     }
-}
+    
 
 gui.start8.onclick = () => {
     crono.start();
@@ -240,43 +280,52 @@ gui.start8.onclick = () => {
     if (secretkey[0] === "8") {
         gui.q.textContent = secretkey[0];
         gui.q.style.color = "green"
+        checkAllGuessed();
     } else if (secretkey[1] === "8") {
         gui.w.textContent = secretkey[1];
         gui.w.style.color = "green"
+        checkAllGuessed();
     } else if (secretkey[2] === "8") {
         gui.e.textContent = secretkey[2];
         gui.e.style.color = "green"
+        checkAllGuessed();
     } else if (secretkey[3] === "8") {
         gui.r.textContent = secretkey[3];
         gui.r.style.color = "green"
-    if (gui.q.textContent != "*" &&  gui.w.textContent!= "*" && gui.e.textContent != "*" && gui.r.textContent != "*"){
-        console.log("Enhorabuena")
-        crono.stop()
+        checkAllGuessed();
+    }
+    if (allGuessed) {
+        console.log("Enhorabuena");
+        crono.stop();
     }
 } 
-}
+
 gui.start9.onclick = () => {
     crono.start();
     console.log("Ha pulsado 9");
     if (secretkey[0] === "9") {
         gui.q.textContent = secretkey[0];
         gui.q.style.color = "green";
-        
+        checkAllGuessed();
     } else if (secretkey[1] === "9") {
         gui.w.textContent = secretkey[1];
         gui.w.style.color = "green";
+        checkAllGuessed();
     } else if (secretkey[2] === "9") {
         gui.e.textContent = secretkey[2];
         gui.e.style.color = "green";
+        checkAllGuessed();
     } else if (secretkey[3] === "9") {
         gui.r.textContent = secretkey[3];
         gui.r.style.color = "green";
-    if (gui.q.textContent != "*" &&  gui.w.textContent!= "*" && gui.e.textContent != "*" && gui.r.textContent != "*"){
-        console.log("Enhorabuena")
-        crono.stop()
-    } 
+        checkAllGuessed();
+    }
+    if (allGuessed) {
+        console.log("Enhorabuena");
+        crono.stop();
+    }
  }
-}
+
 //-- Detener el cronómetro
 gui.stop.onclick = () => {
     console.log("Stop!");
@@ -286,6 +335,7 @@ gui.stop.onclick = () => {
 //-- Reset del cronómetro
 gui.reset.onclick = () => {
     console.log("Reset!");
+    allGuessed = false
 
     //-- Limpiar el display y reiniciar el cronómetro
     crono.reset();

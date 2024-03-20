@@ -1,6 +1,8 @@
 body {
     background-color: black;
-    background-image: url("boom.jpg");
+    background-image: url("boom.jpg") ;
+    
+
 }
 
 .parent {
