@@ -33,7 +33,7 @@ function getRandomInt(max) {
 for (let i = 0; i < 4; i++) {
     let rnum;
     do {
-        rnum = getRandomInt(9).toString(); // Generar un número aleatorio
+        rnum = getRandomInt(10).toString(); // Generar un número aleatorio
     } while (secretkey.includes(rnum)); // Verificar si ya está presente en el array
 
     secretkey.push(rnum); // Agregar el número único al array
@@ -72,6 +72,10 @@ gui.start0.onclick = () => {
     } else if (secretkey[3] === "0") {
         gui.r.textContent = secretkey[3];
         gui.r.style.color = "green"
+        if (gui.q.textContent != "*" &&  gui.w.textContent!= "*" && gui.e.textContent != "*" && gui.r.textContent != "*"){
+            console.log("Enhorabuena")
+            crono.stop()
+    }
     }
 }
 
@@ -90,6 +94,10 @@ gui.start1.onclick = () => {
     } else if (secretkey[3] === "1") {
         gui.r.textContent = secretkey[3];
         gui.r.style.color = "green"
+    if (gui.q.textContent != "*" &&  gui.w.textContent!= "*" && gui.e.textContent != "*" && gui.r.textContent != "*"){
+        console.log("Enhorabuena")
+        crono.stop()
+    }
     }
 }
 
@@ -108,6 +116,10 @@ gui.start2.onclick = () => {
     } else if (secretkey[3] === "2") {
         gui.r.textContent = secretkey[3];
         gui.r.style.color = "green"
+    if (gui.q.textContent != "*" &&  gui.w.textContent!= "*" && gui.e.textContent != "*" && gui.r.textContent != "*"){
+        console.log("Enhorabuena")
+        crono.stop()
+    }
     }
 }
 
@@ -126,6 +138,10 @@ gui.start3.onclick = () => {
     } else if (secretkey[3] === "3") {
         gui.r.textContent = secretkey[3];
         gui.r.style.color = "green"
+    if (gui.q.textContent != "*" &&  gui.w.textContent!= "*" && gui.e.textContent != "*" && gui.r.textContent != "*"){
+        console.log("Enhorabuena")
+        crono.stop()
+    }
     }
 }
 
@@ -144,7 +160,12 @@ gui.start4.onclick = () => {
     } else if (secretkey[3] === "4") {
         gui.r.textContent = secretkey[3];
         gui.r.style.color = "green"
+    if (gui.q.textContent != "*" &&  gui.w.textContent!= "*" && gui.e.textContent != "*" && gui.r.textContent != "*"){
+        console.log("Enhorabuena")
+        crono.stop()
     }
+    }  
+ 
 }
 
 gui.start5.onclick = () => {
@@ -162,8 +183,12 @@ gui.start5.onclick = () => {
     } else if (secretkey[3] === "5") {
         gui.r.textContent = secretkey[3];
         gui.r.style.color = "green"
+    if (gui.q.textContent != "*" &&  gui.w.textContent!= "*" && gui.e.textContent != "*" && gui.r.textContent != "*"){
+        console.log("Enhorabuena")
+        crono.stop()
     }
-}
+    }
+    }
 
 gui.start6.onclick = () => {
     crono.start();
@@ -180,6 +205,10 @@ gui.start6.onclick = () => {
     } else if (secretkey[3] === "6") {
         gui.r.textContent = secretkey[3];
         gui.r.style.color = "green"
+    if (gui.q.textContent != "*" &&  gui.w.textContent!= "*" && gui.e.textContent != "*" && gui.r.textContent != "*"){
+        console.log("Enhorabuena")
+        crono.stop()
+    }
     }
 }
 
@@ -198,6 +227,10 @@ gui.start7.onclick = () => {
     } else if (secretkey[3] === "7") {
         gui.r.textContent = secretkey[3];
         gui.r.style.color = "green"
+    if (gui.q.textContent != "*" &&  gui.w.textContent!= "*" && gui.e.textContent != "*" && gui.r.textContent != "*"){
+        console.log("Enhorabuena")
+        crono.stop()
+    }
     }
 }
 
@@ -216,28 +249,34 @@ gui.start8.onclick = () => {
     } else if (secretkey[3] === "8") {
         gui.r.textContent = secretkey[3];
         gui.r.style.color = "green"
+    if (gui.q.textContent != "*" &&  gui.w.textContent!= "*" && gui.e.textContent != "*" && gui.r.textContent != "*"){
+        console.log("Enhorabuena")
+        crono.stop()
     }
+} 
 }
-
 gui.start9.onclick = () => {
     crono.start();
     console.log("Ha pulsado 9");
     if (secretkey[0] === "9") {
         gui.q.textContent = secretkey[0];
-        gui.q.style.color = "green"
+        gui.q.style.color = "green";
+        
     } else if (secretkey[1] === "9") {
         gui.w.textContent = secretkey[1];
-        gui.w.style.color = "green"
+        gui.w.style.color = "green";
     } else if (secretkey[2] === "9") {
         gui.e.textContent = secretkey[2];
-        gui.e.style.color = "green"
+        gui.e.style.color = "green";
     } else if (secretkey[3] === "9") {
         gui.r.textContent = secretkey[3];
-        gui.r.style.color = "green"
-        
+        gui.r.style.color = "green";
+    if (gui.q.textContent != "*" &&  gui.w.textContent!= "*" && gui.e.textContent != "*" && gui.r.textContent != "*"){
+        console.log("Enhorabuena")
+        crono.stop()
     } 
+ }
 }
- 
 //-- Detener el cronómetro
 gui.stop.onclick = () => {
     console.log("Stop!");
@@ -247,5 +286,36 @@ gui.stop.onclick = () => {
 //-- Reset del cronómetro
 gui.reset.onclick = () => {
     console.log("Reset!");
+
+    //-- Limpiar el display y reiniciar el cronómetro
     crono.reset();
+
+    //-- Limpiar el contenido y el color de los elementos de la GUI
+    gui.q.textContent = "*";
+    gui.q.style.color = "red";
+    gui.w.textContent = "*";
+    gui.w.style.color = "red";
+    gui.e.textContent = "*";
+    gui.e.style.color = "red";
+    gui.r.textContent = "*";
+    gui.r.style.color = "red";
+
+    //-- Limpiar el array secretkey
+    secretkey.length = 0;
+
+    //-- Generar nuevos números aleatorios únicos y almacenarlos en secretkey
+    for (let i = 0; i < 4; i++) {
+        let rnum;
+        do {
+            rnum = getRandomInt(10).toString(); // Generar un número aleatorio
+        } while (secretkey.includes(rnum)); // Verificar si ya está presente en el array
+
+        secretkey.push(rnum); // Agregar el número único al array
+    }
+
+    //-- Mostrar la nueva clave secreta en la consola (opcional)
+    console.log(secretkey);
+
+    //-- Detener el cronómetro
+    crono.stop();
 }
