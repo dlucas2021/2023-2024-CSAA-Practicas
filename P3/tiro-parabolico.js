@@ -25,6 +25,7 @@ let yop = 340;
 let xp = xop;
 let yp = yop;
 
+
 //-- Coordenadas iniciales del objetivo
 let xomin = 200;
 let xomax = 770;
@@ -39,32 +40,55 @@ dibujarP(xop, yop, 50, 50, "green"); // Pintar el proyectil
 dibujarO(xo,yo); // Pintar el objetivo
 
 //-- Velocidad del proyectil
-let velpx = 5;
-let velpy = 1;
+
 
 //-- Función principal de actualización
+let velocidad = document.getElementById("velocidad")
+let veloc = document.getElementById("veloc")
+
+velocidad.oninput = () => {
+    veloc.innerHTML = velocidad.value
+}
+
+
+const angulo = document.getElementById("angulo")
+const ang = document.getElementById("ang")
+
+angulo.oninput = () => {
+    ang.innerHTML = angulo.value
+}
+
+
+
 function lanzar() 
 {
   //-- Implementación del algoritmo de animación:
 
     //-- 1) Actualizar posición de los elementos
     
+    let velpx = Number(velocidad.value);
+    let velpy = Number(velocidad.value);
 
+    let angx = Number(angulo.value);
+    let angy = Number(angulo.value);
     //-- Condición de rebote en extremos verticales del canvas
-    if (xp < 0 || xp >= (canvas.width - 25) ) {
+    if (xp < 0 || xp >= (canvas.width - 20) ) {
         bound_sound();
         velpx = -velpx;
     }
 
     //-- Condición de rebote en extremos horizontales del canvas
-    if (yp <= 0 || yp > canvas.height - 25 ) {
+    if (yp <= 0 || yp > canvas.height - 20 ) {
         bound_sound();
         velpy = -velpy;
     }
-
+    
     //-- Actualizar la posición
     xp = xp + velpx;
     yp = yp + velpy;
+    
+
+
 
     //-- Colisión?¿?¿¿¿?¿
     if (xp - xo < 10 ) {
