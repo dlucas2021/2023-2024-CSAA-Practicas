@@ -12,6 +12,7 @@
 
     <!-- Código javascript -->
     <script src="tiro-parabolico.js" defer></script>
+    <script src = "crono.js"></script>
 
 </head>
 <body>
@@ -20,15 +21,20 @@
     <h1>Tiro parabólico</h1>
     <canvas id="ctiro"></canvas>
     <div>
+    <p>(Para mejor experiencia de juego, se recomienda reducir la página a un 40% de su tamaño original)</p>
     <input type="button" id="btnLanzar" value="Lanzar">
+    <p>Tiempo de vuelo:</p>
+    <p id="display">00:00:00</p>
+    <p id="display2">Resultado...</p>
     <input type="button" id="btnIniciar" value="Iniciar">
     </div>
     <div>
-    <p>Velocidad:</p>
+    <p>Velocidad (valores válidos:0 a 20):</p>
     <input type="range"id= velocidad>  <span id="veloc"></span>
 
-    <p>Ángulo:</p>
+    <p>Ángulo (valores válidos:0 a 50):</p>
     <input type="range"id= angulo>  <span id="ang"></span>
+    
 </div>
 </body>
 </html>
