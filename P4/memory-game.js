@@ -34,7 +34,7 @@ const generateGame = () => {
         const dimensions = 2
         
         //-- Creamos un array con las imagenes que vamos a utilizar en nuestro juego
-        const img = ['piccolo.png', 'vegeta.png', 'goku2.png','freezer.png','celula.png', 'piccolo.png', 'vegeta.png', 'goku2.png','freezer.png','celula.png']
+        const img = ['piccolo.png', 'vegeta.png', 'goku2.png','freezer.png','celula.png','bills.png', 'piccolo.png', 'vegeta.png', 'goku2.png','freezer.png','celula.png','bills.png']
     
         const picks = pickRandom(img, (dimensions * dimensions) / 2) 
     
@@ -66,7 +66,7 @@ const generateGame = () => {
     })
     gui.tamano4.addEventListener('click', () => {
         const dimensions = 4;
-        const img = ['piccolo.png', 'vegeta.png', 'goku2.png','freezer.png','celula.png', 'piccolo.png', 'vegeta.png', 'goku2.png','freezer.png','celula.png']
+        const img = ['piccolo.png', 'vegeta.png', 'goku2.png','freezer.png','celula.png','bills.png', 'piccolo.png', 'vegeta.png', 'goku2.png','freezer.png','celula.png','bills.png']
     
         
         const picks = pickRandom(img, (dimensions * dimensions) / 2) 
@@ -100,7 +100,7 @@ const generateGame = () => {
     gui.tamano6.addEventListener('click', () => {
         const dimensions = 6;
        
-        const img = ['piccolo.png', 'vegeta.png', 'goku2.png','freezer.png','celula.png', 'piccolo.png', 'vegeta.png', 'goku2.png','freezer.png','celula.png']
+        const img = ['piccolo.png', 'vegeta.png', 'goku2.png','freezer.png','celula.png','bills.png', 'piccolo.png', 'vegeta.png', 'goku2.png','freezer.png','celula.png','bills.png']
     
        
         const picks = pickRandom(img, (dimensions * dimensions) / 2) 
