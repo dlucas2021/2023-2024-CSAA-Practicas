@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Memory </title>
+
+        <link rel="stylesheet" href="memory.css" />
+        <script src="memory-game.js" defer></script>
+    </head>
+    <body>
+        <div class="game">
+            <div class="controles">
+                <p id="titulo">DRAGON BALL:MEMORY CARD GAME</p>
+                <button id="start">Comenzar</button>
+                <button id="reset">Reiniciar </button>
+                <p id="tamano">Tamaño del tablero:</p>
+                <button id="tamano2">2</button>
+                <button id="tamano4">4</button>
+                <button id="tamano6">6</button>
+                <div class="display">
+                    <div class="movimientos">0 movimientos</div>
+                    <div class="timer">Tiempo: 0 sec</div>
+                </div>
+            </div>
+        
+            
+            <div class="grid-container">
+                
+                <div class="tablero" grid-dimension="2">
+                    <img id="inicio"  src="gif.gif" alt="gif">
+                    <div class="card" item-back="piccolo.png">
+                        <div class="card-front"></div>
+                    <div class="card-back"><img src="piccolo.png"></div>
+                    </div>
+
+                    <div class="card" id="goku" item-back="goku2.png">
+                        <div class="card-front"></div>
+                    <div class="card-back"><img src="goku2.png"></div>
+
+                    </div>
+                    <div class="card"item-back="vegeta.png">
+                        <div class="card-front"></div>
+                    <div class="card-back"><img src="vegeta.png"></div>
+                    </div>
+
+                    <div class="card" item-back="celula.png">
+                        <div class="card-front"></div>
+                    <div class="card-back"><img src="celula.png"></div>
+
+                    </div>
+                    <div class="card" id="goku" item-back="freezer.png">
+                        <div class="card-front"></div>
+                    <div class="card-back"><img src="freezer.png"></div>
+                    </div>
+                </div>
+                <div class="win">¡Has Ganado!</div>
+            </div>
+        </div>
+    </body>
+</html>
