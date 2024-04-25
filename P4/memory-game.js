@@ -33,8 +33,6 @@ const generateGame = () => {
     gui.tamano2.addEventListener('click', () => {
         const dimensions = 2
         
-      
-        
         //-- Creamos un array con las imagenes que vamos a utilizar en nuestro juego
         const img = ['piccolo.png', 'vegeta.png', 'goku2.png','freezer.png','celula.png', 'piccolo.png', 'vegeta.png', 'goku2.png','freezer.png','celula.png']
     
@@ -179,21 +177,36 @@ const attachEventListeners = () => {
     document.addEventListener('click', event => {
         // Del evento disparado vamos a obtener alguna información útil
         // Como el elemento que ha disparado el evento y el contenedor que lo contiene
-        const eventTarget = event.target
-        const eventParent = eventTarget.parentElement
+        const eventTarget = event.target;
+        const eventParent = eventTarget.parentElement;
 
         // Cuando se trata de una carta que no está girada, le damos la vuelta para mostrarla
         if (eventTarget.className.includes('card') && !eventParent.className.includes('flipped')) {
-            flipCard(eventParent)
+            flipCard(eventParent);
         // Pero si lo que ha pasado es un clic en el botón de comenzar lo que hacemos es
         // empezar el juego
         } else if (eventTarget.nodeName === 'BUTTON' && !eventTarget.className.includes('disabled')) {
-            startGame()
+            startGame();
+        // Si se hace clic en el botón de reinicio
+        } else if (eventTarget.id === 'reset') {
+            resetGame();
         }
-    })
+    });
 }
 
+
 const startGame = () => {
+    // Iniciamos el estado de juego
+    state.gameStarted = true;
+    // Desactivamos el botón de comenzar
+    selectors.comenzar.classList.add('disabled');
+
+    // Mostramos los elementos ocultos
+    document.getElementById('tamano').style.display = 'block';
+    document.getElementById('tamano2').style.display = 'inline-block';
+    document.getElementById('tamano4').style.display = 'inline-block';
+    document.getElementById('tamano6').style.display = 'inline-block';
+    document.querySelector('.display').style.display = 'flex';
     // Iniciamos el estado de juego
     state.gameStarted = true
     // Desactivamos el botón de comenzar
@@ -209,6 +222,8 @@ const startGame = () => {
         selectors.timer.innerText = `Tiempo: ${state.totalTime} sec`
     }, 1000)
 }
+
+
 
 const flipCard = card => {
     // Sumamos uno al contador de cartas giradas
@@ -277,52 +292,40 @@ const flipBackCards = () => {
     state.flippedCards = 0
 }
 
-gui.reset.addEventListener('click',()=>{
-    clearInterval(state.loop)
-    const dimensions = 0;
-       
-    const img = ['piccolo.png', 'vegeta.png', 'goku2.png','freezer.png','celula.png', 'piccolo.png', 'vegeta.png', 'goku2.png','freezer.png','celula.png']
-    
-        //-- Elegimos un subconjunto de emojis al azar, así cada vez que comienza el juego
-        // es diferente.
-        // Es decir, si tenemos un array con 10 emojis, vamos a elegir el cuadrado de las
-        // dimensiones entre dos, para asegurarnos de que cubrimos todas las cartas
-        const picks = pickRandom(img, (dimensions * dimensions) / 2) 
-    
-        //-- Después descolocamos las posiciones para asegurarnos de que las parejas de cartas
-        // están desordenadas.
-        const items = shuffle([...picks, ...picks])
-        
-        //-- Vamos a utilizar una función de mapeo para generar 
-        //  todas las cartas en función de las dimensiones
-        const cards = `
-            <div class="tablero" style="grid-template-columns: repeat(${dimensions}, auto)" grid-dimension="6">
-                ${items.map(item => `
-                    <div class="card" item-back="${item}">
-                        <div class="card-front"></div>
-                        <div class="card-back"><img src="${item}"></div>
-                    </div>
-                `).join('')}
-           </div>
-        `
-        
-        //-- Vamos a utilizar un parser para transformar la cadena que hemos generado
-        // en código html.
-        const parser = new DOMParser().parseFromString(cards, 'text/html')
-    
-        //-- Por último, vamos a inyectar el código html que hemos generado dentro de el contenedor
-        // para el tablero de juego.
-        selectors.tablero.replaceWith(parser.querySelector('.tablero'))
-})
+// Agregar el evento de clic al botón de reinicio
+
+gui.reset.addEventListener('click', () => {
+    // Detenemos el bucle del temporizador
+    clearInterval(state.loop);
+    // Reiniciamos el estado del juego
+    state.gameStarted = false;
+    state.flippedCards = 0;
+    state.totalFlips = 0;
+    state.totalTime = 0;
+    // Reiniciamos el temporizador y el número de movimientos
+    selectors.movimientos.innerText = '0 movimientos';
+    selectors.timer.innerText = 'Tiempo: 0 sec';
+    // Volvemos a dar la vuelta a todas las cartas
+    document.querySelectorAll('.card').forEach(card => {
+        card.classList.remove('flipped');
+        card.classList.remove('matched');
+    });
+    // Volvemos a mostrar el botón de comenzar
+    selectors.comenzar.classList.remove('disabled');
+    // Ocultamos el mensaje de victoria si estaba mostrándose
+    selectors.gridContainer.classList.remove('flipped');
+    selectors.win.innerHTML = '';
+});
+
 gui.comenzar.addEventListener('click',()=>{
     juego = true
+    if (juego) {
+        generateGame();
+    }
+  
     
 })
     
-
 // Generamos el juego
-
-generateGame()
-
 // Asignamos las funciones de callback para determinados eventos
 attachEventListeners()
