@@ -47,6 +47,7 @@ function dijkstraConRetardos(red, origen, destino) {
       nodoActual = anterior[nodoActual];
     }
     rutaMinima.unshift(origen.id);
+    
   
     // Devolver la ruta mínima como una lista de nodos
     return rutaMinima.map(id => red.find(nodo => nodo.id === id));

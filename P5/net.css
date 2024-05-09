@@ -1,5 +1,11 @@
 canvas {
     border: 1px solid black;
+    background-image: url(tecmo.jpg);
+  }
+
+  body{
+    background-color:rgb(44, 124, 51);
+
   }
   
   .controls {
