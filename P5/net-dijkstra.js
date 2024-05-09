@@ -1,15 +1,3 @@
-const gui = {
-    display : document.getElementById("display"),
-   
-}
-
-const crono = new Crono(gui.display);
-
-//---- Configurar las funciones de retrollamada
-
-//-- Arranque del cronometro
-
-
 function dijkstraConRetardos(red, origen, destino) {
     const distancia = {}; // Almacena la distancia mínima desde el nodo origen hasta cada nodo
     const anterior = {}; // Almacena el nodo anterior en la ruta mínima desde el nodo origen hasta cada nodo

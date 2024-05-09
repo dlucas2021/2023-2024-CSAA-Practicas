@@ -165,7 +165,10 @@ function crearRedAleatoriaConCongestion(numNodos, numConexiones) {
         xsa = xs;
       }    
   
-      delay = generarRetardo(); // Retardo aleatorio para simular congestión
+      delay = generarRetardo();
+      delaytotal= delay+0
+      console.log= delaytotal
+      // Retardo aleatorio para simular congestión
       nodos.push(new Nodo(i, x, y, delay)); // Generar un nuevo nodo y añadirlo a la lista de nodos de la red
     }
       
