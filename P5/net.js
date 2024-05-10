@@ -226,7 +226,7 @@ function drawNet(nnodes,rutaMinima) {
       ctx.font = '12px Arial';
       ctx.fillStyle = 'black';
       ctx.textAlign = 'center';
-      ctx.fillStyle = 'white';
+      ctx.fillStyle = 'red';
       pw = "N" + nodo.id + " pw " + peso;
       const midX = Math.floor((nodo.x + conexion.x)/2);
       const midY = Math.floor((nodo.y + conexion.y)/2);
@@ -254,7 +254,6 @@ function drawNet(nnodes,rutaMinima) {
       ctx.fill();
       ctx.font = '12px Arial';
 
-      
     }
     ctx.stroke();
       ctx.fillStyle = 'black';
@@ -276,6 +275,7 @@ btnCNet.onclick = () => {
     red.innerText = `Número de redes generadas:${sum} `
     console.log(sum)
     numero.innerText= numNodos
+    total=0; //reinicio el tiempo total de delay
     // Generar red de nodos con congestión creada de manera aleatoria redAleatoria
     // Cada nodo tendrá un delay aleatorio para simular el envío de paquetes de datos
 
